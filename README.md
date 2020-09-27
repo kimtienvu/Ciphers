@@ -27,3 +27,9 @@ If users input "n"/"N":
 - After the user runs the program with command line arguments, they will be prompted to enter a message they would like to encrypt.
 * If no message is inputted, program ends.
 * If message is provided, Users will be shown the original message, the key, and the encrypted message.
+
+### Javascript Cipher
+- Uses the Ascii chart (not limited to only letters)
+- Use a javascript compiler (online) if you want to run it. 
+- function is called "cipher" and it takes in 2 parameters: a message and a key
+- Enter the message in the html script when the javascript method is called and enter a key.
