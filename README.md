@@ -16,3 +16,14 @@ If users input "n"/"N":
 ### Java Cipher
 - Uses the Ascii chart (not limited to only letters)
 - Uses STDIN to get user input
+
+### C Cipher
+- Uses the Ascii chart (not limited to only letters)
+- Uses command line arguments:
+* 1st is the program name
+* 2nd is "y" or "n" (case insensitive) to indicate if the user would like to choose the key
+* If the user chooses "y": the third argument must be an integer (only positive integers work for now)
+* If the user chooses "n": No third argument is needed
+- After the user runs the program with command line arguments, they will be prompted to enter a message they would like to encrypt.
+* If no message is inputted, program ends.
+* If message is provided, Users will be shown the original message, the key, and the encrypted message.
