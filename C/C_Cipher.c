@@ -1,7 +1,12 @@
 /**
  * Filename: C_Cipher.c
  * Author: Kim Tien Vu
- * Description: This file defines the program to run a Caesar Cipher in C. Compile this file before running it.
+ * Description: This file defines the program to run a Caesar Cipher in C. Compile this file before
+ *  running it by using the Makefile (Run `make` on the command line to compile). To run this 
+ * program, type the executable name `./C_Cipher` followed by either a `y` or `n` to indicate you 
+ * wish to choose your own key. If `y` is selected, you must also supply an integer so the program 
+ * may run using your key, otherwise it will use a default key.
+ * 
  */
 
 #include "C_Cipher.h"
@@ -16,18 +21,61 @@ int key = 0;
  */
 void encrypt(char * msg, int cipherKey)
 {
-  char encrypted_text[] = "";
+  int size = strlen(msg) - 1;
+  char enc_msg[size];
   char letter;
   int ascii;
 
   // Rotate the characters by the cipherKey
-  for(int i = 0; i < strlen(msg) - 1; i++) {
+  int i = 0;
+  for(i; i < size; i++) {
     
+    // Convert to ascii
     ascii = (int) msg[i];
     ascii += cipherKey;
+
+    // Map ascii char to a letter
     letter = (char) ascii;
+
+    // Print to stdout
+    printf("%c", letter);
+    enc_msg[i] = letter;
+  }
+  printf("\n");
+
+  // Display the decrypted message
+  printf(DEC_MSG);
+  decrypt(enc_msg, cipherKey);
+
+  return enc_msg;
+}
+
+/* 
+ * This is the decryption method for the Caesar Cipher.
+ * Parameters: ciphertext - The ciphertext to decrypt
+ *             cipherKey - The number of times each letter in the message will shift
+ */
+void decrypt(char * ciphertext, int cipherKey) 
+{
+  char letter;
+  int ascii;
+
+  // Rotate the characters by the cipherKey
+  int i = 0;
+  for(i; i < strlen(ciphertext) - 1; i++) {
+    
+    // Convert to ascii
+    ascii = (int) ciphertext[i];
+    ascii -= cipherKey;
+
+    // Map to letter
+    letter = (char) ascii;
+
+    // Print to stdout
     printf("%c", letter);
   }
+  printf("\n");
+  
 }
 
 // Run main program here

@@ -18,11 +18,12 @@
 #define  LITERAL "%s\n"
 #define  PROMPT "Insert Message to Encrypt... "
 #define  CHOOSE "Would you like to choose the key? (y or n) "
-#define  ERROR "No input or invalid input"
+#define  ERROR "No input or invalid input. If `y` is chosen, please supply an integer greater than 0."
 #define  Y_CHAR "y"
 #define  N_CHAR "n"
 #define  ORIGINAL_MSG "Original message: %s\n"
 #define  ENC_MSG "Encrypted message: "
+#define  DEC_MSG "Decrypted message: "
 #define  KEY_MSG "The key is: %d\n"
 
 /* 
