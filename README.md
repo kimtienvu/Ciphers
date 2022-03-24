@@ -1,5 +1,5 @@
 # Ciphers
-Playing around with Caesar Ciphers. User will input a message when prompted that they wish to encrypt.
+Playing around with Caesar Ciphers. User will input a message that they wish to encrypt when prompted. This program will also decrypt the encrypted text.
 
 Once a message is inputted, users will have the choice to choose an encryption key (positive or negative integer) using either "y", "Y", or "n", "N".
 
@@ -15,7 +15,10 @@ If users input "n"/"N":
 
 ### Java Cipher
 - Uses the Ascii chart (not limited to only letters)
-- Uses STDIN to get user input
+- Uses STDIN to get user input:
+* 1st input is the message to encrypt
+* 2nd input is `y` or `n`
+* If `y` is chosen, supply a positive integer for the 3rd argument, otherwise there is no 3rd argument
 
 ### C/C++ Cipher
 - To compile, run `make`
