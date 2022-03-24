@@ -1,37 +1,29 @@
-#include <stdio.h>
-#include <ctype.h>
-#include <stdlib.h>
-#include <string.h>
+/**
+ * Filename: C_Cipher.c
+ * Author: Kim Tien Vu
+ * Description: This file defines the program to run a Caesar Cipher in C. Compile this file before running it.
+ */
 
-#define  DEFAULT 17
-#define  MAX_ARG 3
-#define  NO_KEY_ARG 2
-#define  KEY_ARG 2
-#define  LENGTH 100
-#define  SIZE 2
-#define  LITERAL "%s\n"
-#define  PROMPT "Insert Message to Encrypt... "
-#define  CHOOSE "Would you like to choose the key? (y or n) "
-#define  ERROR "No input or invalid input"
-#define  Y_CHAR "y"
-#define  N_CHAR "n"
-#define  BEFORE "Original message: %s\n"
-#define  AFTER "Encrypted message: "
+#include "C_Cipher.h"
 
 //Global variables
 int key = 0;
 
-// Method to run the Caesar Cipher
-void encrypt(char * userInput, int cipherKey)
+/* 
+ * This is the encryption method for the Caesar Cipher.
+ * Parameters: msg - The message the encrypt
+ *             cipherKey - The number of times each letter in the message will shift
+ */
+void encrypt(char * msg, int cipherKey)
 {
   char encrypted_text[] = "";
   char letter;
   int ascii;
 
   // Rotate the characters by the cipherKey
-  for(int i = 0; i < strlen(userInput) - 1; i++) {
+  for(int i = 0; i < strlen(msg) - 1; i++) {
     
-    ascii = (int) userInput[i];
+    ascii = (int) msg[i];
     ascii += cipherKey;
     letter = (char) ascii;
     printf("%c", letter);
@@ -56,7 +48,7 @@ int main(int argc, char * argv[])
     } 
     else {
       printf(LITERAL, ERROR);
-      exit(1);
+      return EXIT_FAILURE;
     }
   } 
   // Name of program, n (user does not want to choose a key) 
@@ -65,41 +57,41 @@ int main(int argc, char * argv[])
     // Check if user inputted n and use the default key
     char check_letter = (char) tolower(*argv[1]);
     if(isdigit(*argv[1]) == 0 && strncmp(&check_letter, N_CHAR, 1) == 0) {
-        
       key = DEFAULT;
     } 
     else {
       printf(LITERAL, ERROR);
-      exit(1);
+      return EXIT_FAILURE;
     }
   }
   // Invalid/only program name, exit the program
   else {
     printf(LITERAL, ERROR);
-    exit(1);
+    return EXIT_FAILURE;
   }
-   
+  
   //Use fgets to get user input message to encrypt
   char message[LENGTH];
-       
+
   printf(PROMPT);
   char * input = fgets(message, LENGTH, stdin);
   
   // Exit the program if no message
   if(input == NULL || strlen(input) == 1) {
     printf(LITERAL, ERROR);
-    exit(1);
+    return EXIT_FAILURE;
   }
 
-  //Display before encrypted Message
-  printf(BEFORE, input);
+  //Display the original message
+  printf(ORIGINAL_MSG, input);
   
-  printf("The key is: %d\n", key);
+  // Display the number of shifts used for the Caesar Cipher
+  printf(KEY_MSG, key);
     
-  //Display encrypted message
-  printf(AFTER);
+  //Display the encrypted message
+  printf(ENC_MSG);
   encrypt(input, key);
   
-  return 0;
+  return EXIT_SUCCESS;
 }
 
