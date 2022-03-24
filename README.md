@@ -17,7 +17,8 @@ If users input "n"/"N":
 - Uses the Ascii chart (not limited to only letters)
 - Uses STDIN to get user input
 
-### C Cipher
+### C/C++ Cipher
+- To compile, run `make`
 - Uses the Ascii chart (not limited to only letters)
 - Uses command line arguments:
 * 1st is the program name
