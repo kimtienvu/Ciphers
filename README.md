@@ -1,5 +1,5 @@
 # Ciphers
-Playing around with Caesar Ciphers. User will input a message that they wish to encrypt when prompted. This program will also decrypt the encrypted text.
+Playing around with Caesar Ciphers. User will input a message that they wish to encrypt when prompted.
 
 Once a message is inputted, users will have the choice to choose an encryption key (positive or negative integer) using either "y", "Y", or "n", "N".
 
@@ -12,6 +12,7 @@ If users input "n"/"N":
 ### Python Cipher
 - Uses the Ascii chart (not limited to only letters)
 - Uses STDIN to get user input
+* This program will also decrypt the encrypted text.
 
 ### Java Cipher
 - Uses the Ascii chart (not limited to only letters)
@@ -19,6 +20,7 @@ If users input "n"/"N":
 * 1st input is the message to encrypt
 * 2nd input is `y` or `n`
 * If `y` is chosen, supply a positive integer for the 3rd argument, otherwise there is no 3rd argument
+* This program will also decrypt the encrypted text.
 
 ### C/C++ Cipher
 - To compile, run `make`
@@ -31,6 +33,7 @@ If users input "n"/"N":
 - After the user runs the program with command line arguments, they will be prompted to enter a message they would like to encrypt.
 * If no message is inputted, program ends.
 * If message is provided, Users will be shown the original message, the key, and the encrypted message.
+* This program will also decrypt the encrypted text.
 
 ### Javascript Cipher
 - Uses the Ascii chart (not limited to only letters)

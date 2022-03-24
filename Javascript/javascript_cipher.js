@@ -1,4 +1,6 @@
-// Method for cipher
+// Method for cipher encryption
+// First parameter is the message and the second is the key
+// This method will return the ciphertext string
 function cipher(message, key) {
   
   //Need to check if key is a valid integer
