@@ -46,8 +46,6 @@ void encrypt(char * msg, int cipherKey)
   // Display the decrypted message
   printf(DEC_MSG);
   decrypt(enc_msg, cipherKey);
-
-  return enc_msg;
 }
 
 /* 
